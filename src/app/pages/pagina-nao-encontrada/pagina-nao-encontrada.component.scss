@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#D0F5EA, #576FAC);
+}
+
+.aviso {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.icone {
+    $tamanho: 90px;
+    font-size: $tamanho;
+    height: $tamanho;
+    width: $tamanho;
+    color: white;
+    margin-bottom: 16px;
+}
+
+.titulo {
+    color: white;
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.link_voltar_pagina_inicial, link_voltar_pagina_inicial:visited {
+    display: block;
+    color: white;
+}
