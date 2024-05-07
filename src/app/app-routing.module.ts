@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './pages/login/login.component';
-import { PaginaNaoEncontradaComponent } from './pages/pagina-nao-encontrada/pagina-nao-encontrada.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { NaoEncontradoPageComponent } from './pages/nao-encontrado-page/nao-encontrado-page.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginPageComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'nao-encontrado', component: PaginaNaoEncontradaComponent },
+  { path: 'nao-encontrado', component: NaoEncontradoPageComponent },
   { path: '**', redirectTo: '/nao-encontrado' }
 ];
 
