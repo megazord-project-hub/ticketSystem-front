@@ -1,15 +1,17 @@
 <div class="container_molecula">
     <app-logo-claro-atom></app-logo-claro-atom>
-    <div class="container_formulario">
+    <form [formGroup]="meuForm" (ngSubmit)="onSubmit()" class="container_formulario">
         <mat-form-field appearance="outline">
             <mat-label>Login</mat-label>
-            <input matInput placeholder="Digite aqui o seu login.">
+            <input (blur)="atualizarMensagemErroLogin()" formControlName="login" matInput placeholder="Digite aqui o seu login.">
+            <mat-error>{{mensagemErroLogin}}</mat-error>
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Senha</mat-label>
-            <input matInput placeholder="Digite aqui a sua senha.">
+            <input (blur)="atualizarMensagemErroSenha()" formControlName="senha" matInput placeholder="Digite aqui a sua senha.">
+            <mat-error>{{mensagemErroSenha}}</mat-error>
         </mat-form-field>
-        <button mat-raised-button color="primary">Entrar</button>
+        <button type="submit" mat-raised-button color="primary">Entrar</button>
         <a routerLink="/nao-encontrado" class="esqueci_senha">Esqueci a senha</a>
-    </div>
+    </form>
 </div>
