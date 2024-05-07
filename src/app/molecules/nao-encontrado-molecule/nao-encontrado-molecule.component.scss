@@ -1,0 +1,34 @@
+.container_molecula {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+.aviso {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.icone {
+    $tamanho: 90px;
+    font-size: $tamanho;
+    height: $tamanho;
+    width: $tamanho;
+    color: white;
+    margin-bottom: 16px;
+}
+
+.titulo {
+    color: white;
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.link_voltar_pagina_inicial, link_voltar_pagina_inicial:visited {
+    display: block;
+    color: white;
+}

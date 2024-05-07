@@ -11,12 +11,18 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import { NaoEncontradoPageComponent } from './pages/nao-encontrado-page/nao-encontrado-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginMoleculeComponent } from './molecules/login-molecule/login-molecule.component';
+import { LogoClaroAtomComponent } from './atoms/logo-claro-atom/logo-claro-atom.component';
+import { NaoEncontradoMoleculeComponent } from './molecules/nao-encontrado-molecule/nao-encontrado-molecule.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    NaoEncontradoPageComponent
+    NaoEncontradoPageComponent,
+    LoginMoleculeComponent,
+    LogoClaroAtomComponent,
+    NaoEncontradoMoleculeComponent
   ],
   imports: [
     BrowserModule,
