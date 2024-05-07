@@ -3,12 +3,12 @@
     <form [formGroup]="meuForm" (ngSubmit)="onSubmit()" class="container_formulario">
         <mat-form-field appearance="outline">
             <mat-label>Login</mat-label>
-            <input (blur)="atualizarMensagemErroLogin()" formControlName="login" matInput placeholder="Digite aqui o seu login.">
+            <input id="login" (blur)="atualizarMensagemErroLogin()" formControlName="login" matInput placeholder="Digite aqui o seu login." #login>
             <mat-error>{{mensagemErroLogin}}</mat-error>
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Senha</mat-label>
-            <input (blur)="atualizarMensagemErroSenha()" formControlName="senha" matInput placeholder="Digite aqui a sua senha.">
+            <input id="senha" (blur)="atualizarMensagemErroSenha()" formControlName="senha" matInput placeholder="Digite aqui a sua senha.">
             <mat-error>{{mensagemErroSenha}}</mat-error>
         </mat-form-field>
         <button type="submit" mat-raised-button color="primary">Entrar</button>
