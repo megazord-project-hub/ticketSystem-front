@@ -14,12 +14,13 @@ export class LoginMoleculeComponent implements OnInit {
   mensagemErroSenha: string;
   mensagemErroLogin: string;
   renderer: Renderer2;
-  senhaVisivel: boolean = false;
+  senhaVisivel: boolean;
 
   constructor(renderer: Renderer2) {
     this.mensagemErroSenha = '';
     this.mensagemErroLogin = '';
     this.renderer = renderer;
+    this.senhaVisivel = false;
   }
 
   ngOnInit(): void {
