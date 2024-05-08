@@ -1,0 +1,40 @@
+.container_page {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#86c1af, #576FAC);
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    position: relative;
+}
+
+.icone_hamburguer {
+    color: white;
+}
+
+.logo {
+    transform: translate(-50%, -28%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    line-height: 0;
+}
+
+.perfil {
+    margin-top: 22px;
+    margin-right: 16px;
+}
+
+.container_conteudo {
+    padding: 60px 80px 80px 80px;
+}
+
+.titulo_pagina {
+    color: white; 
+    font-size: 24px; 
+    font-weight: 500;
+    margin-bottom: 48px;
+}

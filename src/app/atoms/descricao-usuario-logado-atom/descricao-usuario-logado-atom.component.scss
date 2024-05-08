@@ -1,0 +1,30 @@
+.container_atom {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.container_texto {
+    display: flex;
+    flex-direction: column;
+}
+
+.nome, .cargo {
+    color: white;
+    line-height: normal;
+}
+
+.nome {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.cargo {
+    font-size: 12px;
+    font-weight: 400;
+    text-align: right;
+}
+
+.avatar {
+    border-radius: 100%;
+}

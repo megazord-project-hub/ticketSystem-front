@@ -15,6 +15,9 @@ import { LoginMoleculeComponent } from './molecules/login-molecule/login-molecul
 import { LogoClaroAtomComponent } from './atoms/logo-claro-atom/logo-claro-atom.component';
 import { NaoEncontradoMoleculeComponent } from './molecules/nao-encontrado-molecule/nao-encontrado-molecule.component';
 import { UsuarioLogadoPageComponent } from './pages/usuario-logado-page/usuario-logado-page.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { DescricaoUsuarioLogadoAtomComponent } from './atoms/descricao-usuario-logado-atom/descricao-usuario-logado-atom.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { UsuarioLogadoPageComponent } from './pages/usuario-logado-page/usuario-
     LoginMoleculeComponent,
     LogoClaroAtomComponent,
     NaoEncontradoMoleculeComponent,
-    UsuarioLogadoPageComponent
+    UsuarioLogadoPageComponent,
+    DescricaoUsuarioLogadoAtomComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,9 @@ import { UsuarioLogadoPageComponent } from './pages/usuario-logado-page/usuario-
     MatInputModule, 
     MatIconModule, 
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSidenavModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
