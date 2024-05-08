@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginMoleculeComponent } from './molecules/login-molecule/login-molecule.component';
 import { LogoClaroAtomComponent } from './atoms/logo-claro-atom/logo-claro-atom.component';
 import { NaoEncontradoMoleculeComponent } from './molecules/nao-encontrado-molecule/nao-encontrado-molecule.component';
+import { UsuarioLogadoPageComponent } from './pages/usuario-logado-page/usuario-logado-page.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NaoEncontradoMoleculeComponent } from './molecules/nao-encontrado-molec
     NaoEncontradoPageComponent,
     LoginMoleculeComponent,
     LogoClaroAtomComponent,
-    NaoEncontradoMoleculeComponent
+    NaoEncontradoMoleculeComponent,
+    UsuarioLogadoPageComponent
   ],
   imports: [
     BrowserModule,
