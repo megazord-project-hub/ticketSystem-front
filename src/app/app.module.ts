@@ -21,6 +21,8 @@ import { DescricaoUsuarioLogadoAtomComponent } from './atoms/descricao-usuario-l
 import { MeusProjetosPageComponent } from './pages/meus-projetos-page/meus-projetos-page.component';
 import { MatRippleModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
+import { AvatarNomeUsuarioAtomComponent } from './atoms/avatar-nome-usuario-atom/avatar-nome-usuario-atom.component';
+import { TagEstaticaAtomComponent } from './atoms/tag-estatica-atom/tag-estatica-atom.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { MatCardModule } from '@angular/material/card';
     NaoEncontradoMoleculeComponent,
     UsuarioLogadoTemplateComponent,
     DescricaoUsuarioLogadoAtomComponent,
-    MeusProjetosPageComponent
+    MeusProjetosPageComponent,
+    AvatarNomeUsuarioAtomComponent,
+    TagEstaticaAtomComponent
   ],
   imports: [
     BrowserModule,

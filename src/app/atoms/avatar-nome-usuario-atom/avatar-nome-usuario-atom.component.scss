@@ -1,0 +1,18 @@
+.container-atom {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    border-radius: 100%;
+}
+
+.nome {
+    font-size: 16px;
+}
+
+.cargo {
+    font-size: 12px;
+    color: #8e8e8e;
+}
