@@ -8,7 +8,10 @@
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Senha</mat-label>
-            <input id="senha" (blur)="atualizarMensagemErroSenha()" formControlName="senha" matInput placeholder="Digite aqui a sua senha.">
+            <input [type]="senhaVisivel ? 'text' : 'password'" id="senha" (blur)="atualizarMensagemErroSenha()" formControlName="senha" matInput placeholder="Digite aqui a sua senha.">
+            <button type="button" mat-icon-button matSuffix (click)="senhaVisivel = !senhaVisivel">
+                <mat-icon>{{senhaVisivel ? 'visibility' : 'visibility_off'}}</mat-icon>
+            </button>
             <mat-error>{{mensagemErroSenha}}</mat-error>
         </mat-form-field>
         <button type="submit" mat-raised-button color="primary">Entrar</button>

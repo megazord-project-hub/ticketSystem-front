@@ -14,6 +14,7 @@ export class LoginMoleculeComponent implements OnInit {
   mensagemErroSenha: string;
   mensagemErroLogin: string;
   renderer: Renderer2;
+  senhaVisivel: boolean = false;
 
   constructor(renderer: Renderer2) {
     this.mensagemErroSenha = '';
@@ -29,6 +30,7 @@ export class LoginMoleculeComponent implements OnInit {
   }
 
   onSubmit(): void {
+    console.log('fez submit')
     this.atualizarMensagensErros();
     if (this.meuForm.invalid) {
       this.focarNoCampoInvalido();
@@ -62,7 +64,6 @@ export class LoginMoleculeComponent implements OnInit {
     const erros = this.meuForm.get('login')?.errors;
     if (erros?.['required']) {
       this.mensagemErroLogin = 'O login é obrigatório.';
-      console.log(this.mensagemErroSenha);
     }
   }
 
@@ -70,7 +71,6 @@ export class LoginMoleculeComponent implements OnInit {
     const erros = this.meuForm.get('senha')?.errors;
     if (erros?.['required']) {
       this.mensagemErroSenha = 'A senha é obrigatória.';
-      console.log(this.mensagemErroSenha);
     } else if (erros?.['minlength']) {
       this.mensagemErroSenha = 'Exigido pelo menos 3 caracteres.';
     }
