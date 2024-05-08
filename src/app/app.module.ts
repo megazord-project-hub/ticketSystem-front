@@ -14,7 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginMoleculeComponent } from './molecules/login-molecule/login-molecule.component';
 import { LogoClaroAtomComponent } from './atoms/logo-claro-atom/logo-claro-atom.component';
 import { NaoEncontradoMoleculeComponent } from './molecules/nao-encontrado-molecule/nao-encontrado-molecule.component';
-import { UsuarioLogadoPageComponent } from './pages/usuario-logado-page/usuario-logado-page.component';
+import { UsuarioLogadoTemplateComponent } from './templates/usuario-logado-template/usuario-logado-template.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { DescricaoUsuarioLogadoAtomComponent } from './atoms/descricao-usuario-logado-atom/descricao-usuario-logado-atom.component';
@@ -27,7 +27,7 @@ import { DescricaoUsuarioLogadoAtomComponent } from './atoms/descricao-usuario-l
     LoginMoleculeComponent,
     LogoClaroAtomComponent,
     NaoEncontradoMoleculeComponent,
-    UsuarioLogadoPageComponent,
+    UsuarioLogadoTemplateComponent,
     DescricaoUsuarioLogadoAtomComponent
   ],
   imports: [
