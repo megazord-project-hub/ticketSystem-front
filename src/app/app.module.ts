@@ -18,6 +18,9 @@ import { UsuarioLogadoTemplateComponent } from './templates/usuario-logado-templ
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { DescricaoUsuarioLogadoAtomComponent } from './atoms/descricao-usuario-logado-atom/descricao-usuario-logado-atom.component';
+import { MeusProjetosPageComponent } from './pages/meus-projetos-page/meus-projetos-page.component';
+import { MatRippleModule } from '@angular/material/core';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { DescricaoUsuarioLogadoAtomComponent } from './atoms/descricao-usuario-l
     LogoClaroAtomComponent,
     NaoEncontradoMoleculeComponent,
     UsuarioLogadoTemplateComponent,
-    DescricaoUsuarioLogadoAtomComponent
+    DescricaoUsuarioLogadoAtomComponent,
+    MeusProjetosPageComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,9 @@ import { DescricaoUsuarioLogadoAtomComponent } from './atoms/descricao-usuario-l
     MatButtonModule,
     ReactiveFormsModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatRippleModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
