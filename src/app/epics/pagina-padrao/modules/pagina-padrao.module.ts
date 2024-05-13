@@ -5,8 +5,9 @@ import { Variante1PaginaPadraoTemplateComponent } from '../components/templates/
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { AppRoutingModule } from 'src/app/app-routing.module';
 import { MatButtonModule } from '@angular/material/button';
+import { PaginaPadraoRoutingModule } from './pagina-padrao-routing.module';
+import { MeusProjetosModule } from '../../meus-projetos/modules/meus-projetos.module';
 
 
 
@@ -20,8 +21,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    AppRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+    PaginaPadraoRoutingModule,
+    MeusProjetosModule
   ]
 })
 export class PaginaPadraoModule { }
