@@ -1,5 +1,5 @@
 <form [formGroup]="meuForm" (ngSubmit)="onSubmit()" class="container_formulario">
-    {{ isLoading | async }}
+    {{ teste }}
     <mat-form-field appearance="outline">
         <mat-label>Login</mat-label>
         <input id="login" (blur)="atualizarMensagemErroLogin()" formControlName="login" matInput placeholder="Digite aqui o seu login." #login>

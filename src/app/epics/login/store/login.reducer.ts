@@ -32,3 +32,6 @@ export const loginReducer = createReducer(
         descricaoErroLogin: action.erro
     }))
 );
+
+const testeInitialState = 5;
+export const testeReducer = createReducer(testeInitialState);

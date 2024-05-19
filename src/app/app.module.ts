@@ -7,11 +7,12 @@ import { PaginaNaoEncontradaModule } from './epics/pagina-nao-encontrada/modules
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { LoginEffects } from './epics/login/store/login.effects';
-import { LoginState, loginReducer } from './epics/login/store/login.reducer';
+import { LoginState, loginReducer, testeReducer } from './epics/login/store/login.reducer';
 import { HttpClientModule } from '@angular/common/http';
 
 export interface AppState {
-  login: LoginState
+  login: LoginState,
+  teste: number
 }
 
 @NgModule({
@@ -23,7 +24,7 @@ export interface AppState {
     PaginaNaoEncontradaModule,
     AppRoutingModule, // Deverá sempre ser o último módulo importado. Senão, o wildcard '**'
                       // vai ignorar as rotas dos outros módulos.
-    StoreModule.forRoot({login: loginReducer}), 
+    StoreModule.forRoot({login: loginReducer, teste: testeReducer}), 
     EffectsModule.forRoot([LoginEffects])  
   ],
   providers: [],

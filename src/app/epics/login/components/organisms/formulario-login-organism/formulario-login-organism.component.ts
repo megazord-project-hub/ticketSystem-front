@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { iniciarTentativaLogin } from '../../../store/login.actions';
 import { Observable } from 'rxjs';
 import { selectLogin } from '../../../store/login.selector';
 import { AppState } from 'src/app/app.module';
+import { LoginState } from '../../../store/login.reducer';
 
 @Component({
   selector: 'app-formulario-login-organism',
@@ -21,6 +22,7 @@ export class FormularioLoginOrganismComponent implements OnInit {
   renderer: Renderer2;
   senhaVisivel: boolean;
   store: Store;
+  teste: string = '';
 
   constructor(renderer: Renderer2, store: Store<AppState>) {
     this.mensagemErroSenha = '';
@@ -28,6 +30,7 @@ export class FormularioLoginOrganismComponent implements OnInit {
     this.renderer = renderer;
     this.senhaVisivel = false;
     this.store = store;
+    store.select(selectLogin).subscribe(event => this.teste = event.nomeUsuario);
   }
 
   ngOnInit(): void {
@@ -36,7 +39,9 @@ export class FormularioLoginOrganismComponent implements OnInit {
       'senha': new FormControl(null, [Validators.required, Validators.minLength(3)])
     });
 
-    console.log(this.store.select(selectLogin));
+    
+
+    // console.log(this.store.select(selectLogin));
   }
 
   onSubmit(): void {
@@ -47,10 +52,10 @@ export class FormularioLoginOrganismComponent implements OnInit {
       return;
     }  
 
-    // this.store.dispatch(iniciarTentativaLogin({
-    //   login: this.meuForm.get('login')?.value,
-    //   senha: this.meuForm.get('senha')?.value
-    // }))    
+    this.store.dispatch(iniciarTentativaLogin({
+      login: this.meuForm.get('login')?.value,
+      senha: this.meuForm.get('senha')?.value
+    }))    
   }
 
   focarNoCampoInvalido() {
