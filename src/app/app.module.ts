@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +9,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { LoginEffects } from './epics/login/store/login.effects';
 import { LoginState, loginReducer, testeReducer } from './epics/login/store/login.reducer';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 export interface AppState {
   login: LoginState,
@@ -25,7 +26,8 @@ export interface AppState {
     AppRoutingModule, // Deverá sempre ser o último módulo importado. Senão, o wildcard '**'
                       // vai ignorar as rotas dos outros módulos.
     StoreModule.forRoot({login: loginReducer, teste: testeReducer}), 
-    EffectsModule.forRoot([LoginEffects])  
+    EffectsModule.forRoot([LoginEffects]), 
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })  
   ],
   providers: [],
   bootstrap: [AppComponent]
