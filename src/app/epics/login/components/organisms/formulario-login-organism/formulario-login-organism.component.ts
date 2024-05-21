@@ -30,7 +30,6 @@ export class FormularioLoginOrganismComponent implements OnInit {
     this.renderer = renderer;
     this.senhaVisivel = false;
     this.store = store;
-    store.select(selectLogin).subscribe(event => this.teste = event.nomeUsuario);
   }
 
   ngOnInit(): void {
@@ -38,14 +37,9 @@ export class FormularioLoginOrganismComponent implements OnInit {
       'login': new FormControl(null, [Validators.required]),
       'senha': new FormControl(null, [Validators.required, Validators.minLength(3)])
     });
-
-    
-
-    // console.log(this.store.select(selectLogin));
   }
 
   onSubmit(): void {
-    console.log('fez submit')
     this.atualizarMensagensErros();
     if (this.meuForm.invalid) {
       this.focarNoCampoInvalido();

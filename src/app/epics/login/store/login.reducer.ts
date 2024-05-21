@@ -29,9 +29,7 @@ export const loginReducer = createReducer(
     })),
     on(falhaLogin, (state, action) => ({
         ...state,
+        aguardandoRespostaAutenticacao: false,
         descricaoErroLogin: action.erro
     }))
 );
-
-const testeInitialState = 5;
-export const testeReducer = createReducer(testeInitialState);
