@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { falhaLogin, iniciarTentativaLogin, sucessoLogin } from "./login.actions";
 import { catchError, map, of, switchMap, tap } from "rxjs";
-import { AutenticacaoService } from "../services/autenticacao.service";
+import { AuthService } from "../services/auth.service";
 
 @Injectable()
 export class LoginEffects {
@@ -23,6 +23,6 @@ export class LoginEffects {
 
     );
 
-    constructor(public actions$: Actions, private autenticacaoService: AutenticacaoService) {}
+    constructor(public actions$: Actions, private autenticacaoService: AuthService) {}
 
 }

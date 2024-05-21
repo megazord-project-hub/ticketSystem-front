@@ -1,17 +1,17 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { TentativaLoginResponse } from "../models/tentativa-login-response.model";
+import { LoginAttemptResponse } from "../interfaces/login-attempt-response.interface";
 
 @Injectable({providedIn: 'root'})
-export class AutenticacaoService {
+export class AuthService {
 
     constructor(private httpClient: HttpClient) {}
 
-    realizarLogin(login: string, senha: string): Observable<TentativaLoginResponse> {
+    realizarLogin(login: string, senha: string): Observable<LoginAttemptResponse> {
         const requestBody = {username: login, password: senha};
 
-        return this.httpClient.post<TentativaLoginResponse>(
+        return this.httpClient.post<LoginAttemptResponse>(
             'http://localhost:8080/auth/authenticate', 
             requestBody
         );
