@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { iniciarTentativaLogin } from '../../../store/login.actions';
 import { AppState } from 'src/app/app.module';
+import { ErrorMessages } from './form-validation-messages/form-validation-messages';
 
 @Component({
   selector: 'app-formulario-login-organism',
@@ -60,8 +61,7 @@ export class FormularioLoginOrganismComponent implements OnInit {
     //   }
     // }
     // Mas, o FormControl não tem referência ao elemento HTML, que é necessário para
-    // o focus(). Talvez seria legal criar um helper geral pro App que recebe formGroups e
-    // itera pelos seus fields pra dar foco naquele que é inválido.
+    // o focus().
     if (this.myForm.get('login')?.invalid) {
       this.renderer.selectRootElement('#login').focus();
     } else if (this.myForm.get('password')?.invalid) {
@@ -79,16 +79,16 @@ export class FormularioLoginOrganismComponent implements OnInit {
   updateLoginErrorMessage(): void {
     const erros = this.myForm.get('login')?.errors;
     if (erros?.['required']) {
-      this.loginErrorMessage = 'O login é obrigatório.';
+      this.loginErrorMessage = ErrorMessages.login.required;
     }
   }
 
   updatePasswordErrorMessage(): void {
     const erros = this.myForm.get('password')?.errors;
     if (erros?.['required']) {
-      this.passwordErrorMessage = 'A senha é obrigatória.';
+      this.passwordErrorMessage = ErrorMessages.password.required;
     } else if (erros?.['minlength']) {
-      this.passwordErrorMessage = 'Exigido pelo menos 3 caracteres.';
+      this.passwordErrorMessage = ErrorMessages.password.minLength;
     }
   }
 
