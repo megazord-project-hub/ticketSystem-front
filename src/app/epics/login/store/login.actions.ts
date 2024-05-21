@@ -2,7 +2,7 @@ import { createAction, props } from "@ngrx/store";
 
 export const iniciarTentativaLogin = createAction(
     '[Login] Iniciar Tentativa Login',
-    props<{ login: string, senha: string }>()
+    props<{ login: string, password: string }>()
 );
 
 export const sucessoLogin = createAction(

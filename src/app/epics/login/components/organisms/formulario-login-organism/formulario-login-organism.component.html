@@ -1,16 +1,16 @@
-<form [formGroup]="meuForm" (ngSubmit)="onSubmit()" class="container_formulario">
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form_container">
     <mat-form-field appearance="outline">
         <mat-label>Login</mat-label>
-        <input id="login" (blur)="atualizarMensagemErroLogin()" formControlName="login" matInput placeholder="Digite aqui o seu login." #login>
-        <mat-error>{{mensagemErroLogin}}</mat-error>
+        <input (blur)="updateLoginErrorMessage()" id="login" formControlName="login" matInput placeholder="Digite aqui o seu login.">
+        <mat-error>{{loginErrorMessage}}</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline">
         <mat-label>Senha</mat-label>
-        <input [type]="senhaVisivel ? 'text' : 'password'" id="senha" (blur)="atualizarMensagemErroSenha()" formControlName="senha" matInput placeholder="Digite aqui a sua senha.">
-        <button type="button" mat-icon-button matSuffix (click)="senhaVisivel = !senhaVisivel">
-            <mat-icon>{{senhaVisivel ? 'visibility' : 'visibility_off'}}</mat-icon>
+        <input [type]="isPasswordVisible ? 'text' : 'password'" id="password" (blur)="updatePasswordErrorMessage()" formControlName="password" matInput placeholder="Digite aqui a sua senha.">
+        <button type="button" mat-icon-button matSuffix (click)="isPasswordVisible = !isPasswordVisible">
+            <mat-icon>{{isPasswordVisible ? 'visibility' : 'visibility_off'}}</mat-icon>
         </button>
-        <mat-error>{{mensagemErroSenha}}</mat-error>
+        <mat-error>{{passwordErrorMessage}}</mat-error>
     </mat-form-field>
     <button type="submit" mat-raised-button color="primary">Entrar</button>
 </form>

@@ -13,7 +13,7 @@ export class LoginEffects {
                 ofType(iniciarTentativaLogin),
                 switchMap((action) =>
                     this.autenticacaoService
-                        .realizarLogin(action.login, action.senha)
+                        .realizarLogin(action.login, action.password)
                         .pipe(
                             map(response => sucessoLogin({token: response.token ? response.token : ''})),
                             catchError(response => of(falhaLogin({erro: response.error})))
