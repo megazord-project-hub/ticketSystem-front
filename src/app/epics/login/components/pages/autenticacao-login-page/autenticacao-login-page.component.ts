@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CaixaLoginOrganismComponent } from '../../organisms/caixa-login-organism/caixa-login-organism.component';
+import { BoxOrganismLoginComponent } from '../../organisms/box-organism-login/box-organism-login.component';
 
 @Component({
   selector: 'app-autenticacao-login-page',

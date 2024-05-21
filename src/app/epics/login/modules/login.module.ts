@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CaixaLoginOrganismComponent } from '../components/organisms/caixa-login-organism/caixa-login-organism.component';
-import { FormularioLoginOrganismComponent } from '../components/organisms/formulario-login-organism/formulario-login-organism.component';
+import { BoxOrganismLoginComponent } from '../components/organisms/box-organism-login/box-organism-login.component';
+import { FormOrganismLoginComponent } from '../components/organisms/form-organism-login/form-organism-login.component';
 import { AutenticacaoLoginPageComponent } from '../components/pages/autenticacao-login-page/autenticacao-login-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -14,8 +14,8 @@ import { LoginRoutingModule } from './login-routing.module';
 
 @NgModule({
   declarations: [
-    CaixaLoginOrganismComponent,
-    FormularioLoginOrganismComponent,
+    BoxOrganismLoginComponent,
+    FormOrganismLoginComponent,
     AutenticacaoLoginPageComponent
   ],
   imports: [

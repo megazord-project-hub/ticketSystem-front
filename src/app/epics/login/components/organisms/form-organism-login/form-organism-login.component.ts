@@ -6,11 +6,11 @@ import { AppState } from 'src/app/app.module';
 import { ErrorMessages } from './form-validation-messages/form-validation-messages';
 
 @Component({
-  selector: 'app-formulario-login-organism',
-  templateUrl: './formulario-login-organism.component.html',
-  styleUrls: ['./formulario-login-organism.component.scss']
+  selector: 'app-form-organism-login',
+  templateUrl: './form-organism-login.component.html',
+  styleUrls: ['./form-organism-login.component.scss']
 })
-export class FormularioLoginOrganismComponent implements OnInit {
+export class FormOrganismLoginComponent implements OnInit {
 
   public myForm!: FormGroup; 
   public passwordErrorMessage: string;
