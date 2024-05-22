@@ -77,17 +77,17 @@ export class FormOrganismLoginComponent implements OnInit {
   }
 
   updateLoginErrorMessage(): void {
-    const erros = this.myForm.get('login')?.errors;
-    if (erros?.['required']) {
+    const errors = this.myForm.get('login')?.errors;
+    if (errors?.['required']) {
       this.loginErrorMessage = ErrorMessages.login.required;
     }
   }
 
   updatePasswordErrorMessage(): void {
-    const erros = this.myForm.get('password')?.errors;
-    if (erros?.['required']) {
+    const errors = this.myForm.get('password')?.errors;
+    if (errors?.['required']) {
       this.passwordErrorMessage = ErrorMessages.password.required;
-    } else if (erros?.['minlength']) {
+    } else if (errors?.['minlength']) {
       this.passwordErrorMessage = ErrorMessages.password.minLength;
     }
   }
