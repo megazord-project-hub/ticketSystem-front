@@ -1,7 +1,7 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { iniciarTentativaLogin } from '../../../store/login.actions';
+import { startLoginAttempt } from '../../../store/login.actions';
 import { AppState } from 'src/app/app.module';
 import { ErrorMessages } from './form-validation-messages/form-validation-messages';
 
@@ -70,7 +70,7 @@ export class FormOrganismLoginComponent implements OnInit {
   }
 
   private sendLoginHttpRequest() {
-    this.store.dispatch(iniciarTentativaLogin({
+    this.store.dispatch(startLoginAttempt({
       login: this.myForm.get('login')?.value,
       password: this.myForm.get('password')?.value
     }))   

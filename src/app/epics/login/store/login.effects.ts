@@ -1,22 +1,21 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { falhaLogin, iniciarTentativaLogin, sucessoLogin } from "./login.actions";
+import { loginFailure, startLoginAttempt, loginSuccess } from "./login.actions";
 import { catchError, map, of, switchMap, tap } from "rxjs";
 import { AuthService } from "../services/auth.service";
 
 @Injectable()
 export class LoginEffects {
-
-    enviarRequisicaoAutenticacao = createEffect(
+    sendAuthRequest = createEffect(
         () => 
             this.actions$.pipe(
-                ofType(iniciarTentativaLogin),
+                ofType(startLoginAttempt),
                 switchMap((action) =>
                     this.autenticacaoService
-                        .realizarLogin(action.login, action.password)
+                        .sendAuthRequest(action.login, action.password)
                         .pipe(
-                            map(response => sucessoLogin({token: response.token ? response.token : ''})),
-                            catchError(response => of(falhaLogin({erro: response.error})))
+                            map(response => loginSuccess({token: response.token ? response.token : ''})),
+                            catchError(response => of(loginFailure({erro: response.error})))
                         )
                 )
             )
@@ -24,5 +23,4 @@ export class LoginEffects {
     );
 
     constructor(public actions$: Actions, private autenticacaoService: AuthService) {}
-
 }

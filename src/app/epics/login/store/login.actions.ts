@@ -1,16 +1,16 @@
 import { createAction, props } from "@ngrx/store";
 
-export const iniciarTentativaLogin = createAction(
-    '[Login] Iniciar Tentativa Login',
+export const startLoginAttempt = createAction(
+    '[Login] Start Login Attempt',
     props<{ login: string, password: string }>()
 );
 
-export const sucessoLogin = createAction(
-    '[Login] Sucesso Login',
+export const loginSuccess = createAction(
+    '[Login] Login Success',
     props<{ token: string }>()
 );
 
-export const falhaLogin = createAction(
-    '[Login] Falha Login',
+export const loginFailure = createAction(
+    '[Login] Login Failure',
     props<{ erro: string }>()
 );

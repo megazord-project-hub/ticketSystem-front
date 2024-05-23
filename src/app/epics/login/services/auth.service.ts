@@ -8,7 +8,7 @@ export class AuthService {
 
     constructor(private httpClient: HttpClient) {}
 
-    realizarLogin(login: string, password: string): Observable<LoginAttemptResponse> {
+    sendAuthRequest(login: string, password: string): Observable<LoginAttemptResponse> {
         const requestBody = {username: login, password: password};
 
         return this.httpClient.post<LoginAttemptResponse>(
