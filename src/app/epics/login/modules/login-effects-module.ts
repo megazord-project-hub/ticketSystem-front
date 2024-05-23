@@ -4,7 +4,7 @@ import { LoginEffects } from "../store/login.effects";
 
 @NgModule({
     imports: [
-        EffectsModule.forFeature([LoginEffects])
+        // EffectsModule.forFeature([LoginEffects])
     ]
 })
 export class LoginEffectsModule {}

@@ -8,8 +8,8 @@ export class AuthService {
 
     constructor(private httpClient: HttpClient) {}
 
-    realizarLogin(login: string, senha: string): Observable<LoginAttemptResponse> {
-        const requestBody = {username: login, password: senha};
+    realizarLogin(login: string, password: string): Observable<LoginAttemptResponse> {
+        const requestBody = {username: login, password: password};
 
         return this.httpClient.post<LoginAttemptResponse>(
             'http://localhost:8080/auth/authenticate', 
