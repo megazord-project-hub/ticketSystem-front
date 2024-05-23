@@ -53,15 +53,15 @@ export class FormOrganismLoginComponent implements OnInit {
   }
 
   private focusOnInvalidField() {
-    // TODO: iterar entre os campos do formulário e dar foco de maneira automática.
-    // Tentei o código:
+    // TODO: iterate through each form field and focus on any invalid ones.
+    // I tried the following code:
     // for (let nomeControl in this.myForm.controls) {
     //   if (this.myForm.get(nomeControl)?.invalid) {
     //      fazer focus()
     //   }
     // }
-    // Mas, o FormControl não tem referência ao elemento HTML, que é necessário para
-    // o focus().
+    // But FormControl doesn't reference the HTML element, which is necessary for
+    // focusing. 
     if (this.myForm.get('login')?.invalid) {
       this.renderer.selectRootElement('#login').focus();
     } else if (this.myForm.get('password')?.invalid) {
@@ -71,7 +71,7 @@ export class FormOrganismLoginComponent implements OnInit {
 
   private sendLoginHttpRequest() {
     this.store.dispatch(startLoginAttempt({
-      login: this.myForm.get('login')?.value,
+      username: this.myForm.get('login')?.value,
       password: this.myForm.get('password')?.value
     }))   
   }

@@ -2,17 +2,17 @@ import { createFeature, createReducer, on } from "@ngrx/store";
 import { loginFailure, startLoginAttempt, loginSuccess } from "./login.actions";
 
 export interface LoginState {
-    nomeUsuario: string;
-    descricaoErroLogin: string;
-    aguardandoRespostaAutenticacao: boolean;
-    tokenAutenticacao: string;
+    username: string;
+    error: string;
+    isLoading: boolean;
+    token: string;
 }
 
 export const stateInicial: LoginState = {
-    nomeUsuario: '',
-    descricaoErroLogin: '',
-    aguardandoRespostaAutenticacao: false,
-    tokenAutenticacao: ''
+    username: '',
+    error: '',
+    isLoading: false,
+    token: ''
 }
 
 export const loginFeature = createFeature({
@@ -21,18 +21,18 @@ export const loginFeature = createFeature({
         stateInicial,
         on(startLoginAttempt, (state, action) => ({
             ...stateInicial, 
-            nomeUsuario: action.login,
-            aguardandoRespostaAutenticacao: true
+            username: action.username,
+            isLoading: true
         })),
         on(loginSuccess, (state, action) => ({
             ...state, 
-            aguardandoRespostaAutenticacao: false,
-            tokenAutenticacao: action.token
+            isLoading: false,
+            token: action.token
         })),
         on(loginFailure, (state, action) => ({
             ...state,
-            aguardandoRespostaAutenticacao: false,
-            descricaoErroLogin: action.erro
+            isLoading: false,
+            error: action.error
         }))
     )
 });
@@ -41,8 +41,8 @@ export const {
     name,
     reducer,
     selectLoginState,
-    selectNomeUsuario,
-    selectDescricaoErroLogin,
-    selectAguardandoRespostaAutenticacao,
-    selectTokenAutenticacao
+    selectError,
+    selectIsLoading,
+    selectToken,
+    selectUsername
 } = loginFeature;
