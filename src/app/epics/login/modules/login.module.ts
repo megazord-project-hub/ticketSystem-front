@@ -10,7 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginStoreModule } from './login-store-module';
-// import { LoginEffectsModule } from './login-effects-module';
+import { LoginEffectsModule } from './login-effects-module';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { LoginStoreModule } from './login-store-module';
     MatButtonModule,
     LoginRoutingModule,
     LoginStoreModule,
-    // LoginEffectsModule
+    LoginEffectsModule
   ]
 })
 export class LoginModule { }

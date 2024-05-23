@@ -24,7 +24,7 @@ export interface AppState {
     PaginaNaoEncontradaModule,
     AppRoutingModule, // Deverá sempre ser o último módulo com rota importado. Senão, o wildcard '**'
                       // vai ignorar as rotas dos outros módulos.
-    EffectsModule.forRoot([LoginEffects]), 
+    EffectsModule.forRoot([]), 
     StoreModule.forRoot({}), 
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })  
   ],
