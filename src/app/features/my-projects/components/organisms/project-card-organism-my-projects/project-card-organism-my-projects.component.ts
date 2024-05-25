@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-project-card-organism-my-projects',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./project-card-organism-my-projects.component.scss']
 })
 export class ProjectCardOrganismMyProjectsComponent {
+
+  @Input() isProjetoAtivo: boolean;
+
+  constructor() {
+    this.isProjetoAtivo = false;
+  }
 
 }

@@ -7,8 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class TagAtomMyProjectsComponent {
 
-  @Input() descricao!: string;
-  @Input() corFundo!: string;
-  @Input() corTexto!: string;
+  @Input() isAtivo: boolean;
+
+  constructor() {
+    this.isAtivo = false;
+  }
 
 }
