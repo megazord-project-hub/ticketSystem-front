@@ -7,6 +7,7 @@ import { ProjectCardOrganismMyProjectsComponent } from '../components/organisms/
 import { MatRippleModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { NewProjectButtonAtomMyProjectsComponent } from '../components/atoms/new-project-button-atom-my-projects/new-project-button-atom-my-projects.component';
 
 
 
@@ -15,7 +16,8 @@ import { MatIconModule } from '@angular/material/icon';
     TagAtomMyProjectsComponent,
     ProjectManagerMoleculeMyProjectsComponent,
     ProjectsListPageMyProjectsComponent,
-    ProjectCardOrganismMyProjectsComponent
+    ProjectCardOrganismMyProjectsComponent,
+    NewProjectButtonAtomMyProjectsComponent
   ],
   imports: [
     CommonModule,
