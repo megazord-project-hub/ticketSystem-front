@@ -1,15 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { BootstrapComponent } from './bootstrap.component';
+import { BootstrapCoreComponent } from './bootstrap-core.component';
 
-describe('BootstrapComponent', () => {
+describe('BootstrapCoreComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
     imports: [RouterTestingModule],
-    declarations: [BootstrapComponent]
+    declarations: [BootstrapCoreComponent]
   }));
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(BootstrapComponent);
+    const fixture = TestBed.createComponent(BootstrapCoreComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });

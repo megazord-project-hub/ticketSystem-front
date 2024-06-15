@@ -1,7 +1,7 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { BootstrapComponent } from './core/bootstrap/components/bootstrap-component/bootstrap.component';
+import { BootstrapCoreComponent } from './core/bootstrap/components/bootstrap-core/bootstrap-core.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginaNaoEncontradaModule } from './features/pagina-nao-encontrada/modules/pagina-nao-encontrada.module';
 import { StoreModule } from '@ngrx/store';
@@ -27,6 +27,6 @@ import { CoreModule } from './core/core.module';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })  
   ],
   providers: [],
-  bootstrap: [BootstrapComponent]
+  bootstrap: [BootstrapCoreComponent]
 })
 export class AppModule { }

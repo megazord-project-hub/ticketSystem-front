@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { BootstrapComponent } from './components/bootstrap-component/bootstrap.component';
+import { BootstrapCoreComponent } from './components/bootstrap-core/bootstrap-core.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
-    BootstrapComponent
+    BootstrapCoreComponent
   ],
   imports: [
     CommonModule,

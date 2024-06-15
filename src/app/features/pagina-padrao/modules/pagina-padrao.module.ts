@@ -7,7 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { PaginaPadraoRoutingModule } from './pagina-padrao-routing.module';
-import { MyProjectsModule } from '../../my-projects/modules/my-projects.module';
+import { MyProjectsModule } from '../../my-projects/my-projects.module';
 
 
 
