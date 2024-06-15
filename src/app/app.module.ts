@@ -1,17 +1,17 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './core/bootstrap/components/app-component/app.component';
+import { BootstrapComponent } from './core/bootstrap/components/bootstrap-component/bootstrap.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginaNaoEncontradaModule } from './features/pagina-nao-encontrada/modules/pagina-nao-encontrada.module';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { AuthModule } from './core/auth/auth.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [],
   imports: [
     HttpClientModule,
     BrowserModule,
@@ -21,12 +21,12 @@ import { AuthModule } from './core/auth/auth.module';
     // this array, relative to other modules that define routes. Otherwise,
     // the wildcard path (**) will ignore their route paths.
     AppRoutingModule,
-    AuthModule,
+    CoreModule,
     EffectsModule.forRoot([]), 
     StoreModule.forRoot({}), 
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })  
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [BootstrapComponent]
 })
 export class AppModule { }
