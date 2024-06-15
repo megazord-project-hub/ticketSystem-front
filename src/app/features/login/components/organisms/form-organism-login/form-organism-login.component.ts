@@ -1,9 +1,10 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { startLoginAttempt } from '../../../store/login.actions';
-import { AppState } from 'src/app/app.module';
+import { startAuthAttempt } from '../../../../../core/auth/store/state-management/auth.actions';
+import { AppState } from '../../../../../core/store/interfaces/app-state';
 import { ErrorMessages } from './form-validation-messages/form-validation-messages';
+import { AuthRequestBodyModel } from 'src/app/core/auth/models/auth-request-body.model';
 
 @Component({
   selector: 'app-form-organism-login',
@@ -11,7 +12,6 @@ import { ErrorMessages } from './form-validation-messages/form-validation-messag
   styleUrls: ['./form-organism-login.component.scss']
 })
 export class FormOrganismLoginComponent implements OnInit {
-
   public myForm!: FormGroup; 
   public passwordErrorMessage: string;
   public loginErrorMessage: string;
@@ -40,10 +40,12 @@ export class FormOrganismLoginComponent implements OnInit {
 
   onSubmit(): void {
     this.updateErrorMessages();
+
     if (this.myForm.invalid) {
       this.focusOnInvalidField();
       return;
     }  
+
     this.sendLoginHttpRequest(); 
   }
 
@@ -53,43 +55,41 @@ export class FormOrganismLoginComponent implements OnInit {
   }
 
   private focusOnInvalidField() {
-    // TODO: iterate through each form field and focus on any invalid ones.
-    // I tried the following code:
-    // for (let nomeControl in this.myForm.controls) {
-    //   if (this.myForm.get(nomeControl)?.invalid) {
-    //      fazer focus()
-    //   }
-    // }
-    // But FormControl doesn't reference the HTML element, which is necessary for
-    // focusing. 
-    if (this.myForm.get('login')?.invalid) {
+    if (this.myForm.controls['login'].invalid) {
       this.renderer.selectRootElement('#login').focus();
-    } else if (this.myForm.get('password')?.invalid) {
+    } else if (this.myForm.controls['password'].invalid) {
       this.renderer.selectRootElement('#password').focus();
     }
   }
 
   private sendLoginHttpRequest() {
-    this.store.dispatch(startLoginAttempt({
-      username: this.myForm.get('login')?.value,
-      password: this.myForm.get('password')?.value
-    }))   
+    const authRequestBody = new AuthRequestBodyModel(
+      this.myForm.controls['login'].value,
+      this.myForm.controls['password'].value
+    );
+    
+    this.store.dispatch(startAuthAttempt(authRequestBody));
   }
 
   updateLoginErrorMessage(): void {
-    const errors = this.myForm.get('login')?.errors;
-    if (errors?.['required']) {
+    const loginControl = this.myForm.controls['login'];
+
+    if (!loginControl.errors) {
+      this.loginErrorMessage = '';
+    } else if (loginControl.errors['required']) {
       this.loginErrorMessage = ErrorMessages.login.required;
     }
   }
 
   updatePasswordErrorMessage(): void {
-    const errors = this.myForm.get('password')?.errors;
-    if (errors?.['required']) {
+    const passwordControl = this.myForm.controls['password'];
+
+    if (!passwordControl.errors) {
+      this.passwordErrorMessage = '';
+    } else if (passwordControl.errors['required']) {
       this.passwordErrorMessage = ErrorMessages.password.required;
-    } else if (errors?.['minlength']) {
+    } else if (passwordControl.errors['minlength']) {
       this.passwordErrorMessage = ErrorMessages.password.minLength;
     }
   }
-
 }

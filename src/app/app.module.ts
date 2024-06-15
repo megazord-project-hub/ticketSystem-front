@@ -1,19 +1,14 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppComponent } from './core/bootstrap/components/app-component/app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginaNaoEncontradaModule } from './features/pagina-nao-encontrada/modules/pagina-nao-encontrada.module';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { LoginEffects } from './features/login/store/login.effects';
-import { LoginState } from './features/login/store/login.reducer';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-
-export interface AppState {
-  login: LoginState,
-}
+import { AuthModule } from './core/auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,8 +17,11 @@ export interface AppState {
     BrowserModule,
     BrowserAnimationsModule,
     PaginaNaoEncontradaModule,
-    AppRoutingModule, // Deverá sempre ser o último módulo com rota importado. Senão, o wildcard '**'
-                      // vai ignorar as rotas dos outros módulos.
+    // AppRoutingModule should always be the last module imported into
+    // this array, relative to other modules that define routes. Otherwise,
+    // the wildcard path (**) will ignore their route paths.
+    AppRoutingModule,
+    AuthModule,
     EffectsModule.forRoot([]), 
     StoreModule.forRoot({}), 
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })  
