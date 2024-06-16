@@ -46,5 +46,8 @@ export const {
     selectErrorClassName,
     selectIsLoading,
     selectToken,
-    selectUsername
+    selectUsername,
+    selectFullname,
+    selectSessionStart,
+    selectSessionTimeout
 } = authFeature;
