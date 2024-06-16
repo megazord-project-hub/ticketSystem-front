@@ -1,13 +1,13 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { BootstrapCoreComponent } from './core/bootstrap/components/bootstrap-core/bootstrap-core.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CoreModule } from './core/core.module';
+import { CoreBootstrapComponent } from './core/components/core-bootstrap/core-bootstrap.component';
 
 @NgModule({
   declarations: [],
@@ -25,6 +25,6 @@ import { CoreModule } from './core/core.module';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })  
   ],
   providers: [],
-  bootstrap: [BootstrapCoreComponent]
+  bootstrap: [CoreBootstrapComponent]
 })
 export class AppModule { }

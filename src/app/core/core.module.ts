@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { AuthModule } from './auth/auth.module';
-import { BootstrapModule } from './bootstrap/bootstrap.module';
+import { CoreBootstrapComponent } from './components/core-bootstrap/core-bootstrap.component';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    CoreBootstrapComponent
+  ],
   imports: [
-    AuthModule,
-    BootstrapModule
+    CommonModule,
+    RouterModule,
+    AuthModule
   ]
 })
 export class CoreModule { }
