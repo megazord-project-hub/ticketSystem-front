@@ -1,4 +1,5 @@
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form_container">
+    <app-shared-a-message-box-basic></app-shared-a-message-box-basic>
     <mat-form-field appearance="outline" subscriptSizing="dynamic">
         <mat-label>Login</mat-label>
         <input (blur)="updateLoginErrorMessage()" id="login" formControlName="login" matInput placeholder="Digite aqui o seu login.">

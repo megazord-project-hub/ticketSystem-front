@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginRoutingModule } from './login-routing.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { SharedMessageBoxModule } from 'src/app/shared/message-box/shared-message-box.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatIconModule,
     MatButtonModule,
     LoginRoutingModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    SharedMessageBoxModule
   ]
 })
 export class LoginModule { }
