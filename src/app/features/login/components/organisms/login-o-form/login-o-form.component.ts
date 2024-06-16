@@ -5,6 +5,7 @@ import { startAuthAttempt } from '../../../../../core/auth/store/state-managemen
 import { AppState } from '../../../../../core/store/interfaces/app-state';
 import { ErrorMessages } from './form-validation-messages/form-validation-messages';
 import { AuthRequestBodyModel } from 'src/app/core/auth/models/auth-request-body.model';
+import { selectIsLoading } from 'src/app/core/auth/store/state-management/auth.reducer';
 
 @Component({
   selector: 'app-login-o-form',
@@ -12,12 +13,13 @@ import { AuthRequestBodyModel } from 'src/app/core/auth/models/auth-request-body
   styleUrls: ['./login-o-form.component.scss']
 })
 export class LoginOFormComponent implements OnInit {
-  public myForm!: FormGroup; 
-  public passwordErrorMessage: string;
-  public loginErrorMessage: string;
-  public isPasswordVisible: boolean;
+  myForm!: FormGroup; 
+  passwordErrorMessage: string;
+  loginErrorMessage: string;
+  isPasswordVisible: boolean;
   private store: Store;
   private renderer: Renderer2;
+  isAuthenticationLoading: boolean;
 
   constructor(renderer: Renderer2, store: Store<AppState>) {
     this.passwordErrorMessage = '';
@@ -25,10 +27,12 @@ export class LoginOFormComponent implements OnInit {
     this.renderer = renderer;
     this.isPasswordVisible = false;
     this.store = store;
+    this.isAuthenticationLoading = false;
   }
 
   ngOnInit(): void {
     this.configureForm();
+    this.store.select(selectIsLoading).subscribe((value) => this.isAuthenticationLoading = value);
   }
 
   private configureForm(): void {

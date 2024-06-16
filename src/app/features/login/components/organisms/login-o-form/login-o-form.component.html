@@ -12,5 +12,8 @@
         </button>
         <mat-error>{{passwordErrorMessage}}</mat-error>
     </mat-form-field>
-    <button type="submit" mat-raised-button color="primary">Entrar</button>
+    <button type="submit" mat-raised-button color="primary">
+        <span *ngIf="!isAuthenticationLoading">Entrar</span>
+        <span *ngIf="isAuthenticationLoading"><mat-spinner color="accent" [diameter]="24"></mat-spinner></span>
+    </button>
 </form>

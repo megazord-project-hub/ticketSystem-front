@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginRoutingModule } from './login-routing.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LoginRoutingModule } from './login-routing.module';
     ReactiveFormsModule,
     MatIconModule,
     MatButtonModule,
-    LoginRoutingModule
+    LoginRoutingModule,
+    MatProgressSpinnerModule
   ]
 })
 export class LoginModule { }
