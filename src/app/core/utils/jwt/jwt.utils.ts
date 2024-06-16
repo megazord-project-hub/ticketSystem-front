@@ -4,6 +4,7 @@ import { TokenData } from './interfaces/token-data';
 
 export class JwtUtils {
 
+    // T is a type containing the decoded object's properties
     static decodeToken<T>(token: string): TokenData<T> {
         try { 
             const decodedToken: T = jwt_decode.jwtDecode<T>(token);

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthPageLoginComponent } from './components/pages/auth-page-login/auth-page-login.component';
+import { LoginPLayoutComponent } from './components/pages/login-p-layout/login-p-layout.component';
 
 const routes: Routes = [
-  { path: '', component: AuthPageLoginComponent }
+  { path: '', component: LoginPLayoutComponent }
 ];
 
 @NgModule({
