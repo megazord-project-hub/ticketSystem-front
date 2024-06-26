@@ -10,7 +10,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginRoutingModule } from './login-routing.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { SharedMessageBoxModule } from 'src/app/shared/message-box/shared-message-box.module';
+import { MatTooltipModule } from '@angular/material/tooltip'
+import { MessageBoxSModule } from 'src/app/shared/message-box-s/message-box-s.module';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { SharedMessageBoxModule } from 'src/app/shared/message-box/shared-messag
     MatButtonModule,
     LoginRoutingModule,
     MatProgressSpinnerModule,
-    SharedMessageBoxModule
+    MatTooltipModule,
+    MessageBoxSModule
   ]
 })
 export class LoginModule { }

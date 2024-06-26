@@ -1,0 +1,15 @@
+@use '@angular/material' as mat;
+
+@mixin color($theme) {
+    .container_form {
+        background-color: mat.get-theme-color($theme, surface-container);
+    }
+
+    .logo path {
+        fill: mat.get-theme-color($theme, primary);
+    }
+
+    .theme-type-button {
+        color: mat.get-theme-color($theme, outline);
+    }
+}

@@ -1,0 +1,7 @@
+@use './components/organisms/login-o-box/login-o-box-theme';
+@use './components/pages/login-p-layout/login-p-layout-theme';
+
+@mixin color($theme) {
+    @include login-o-box-theme.color($theme);
+    @include login-p-layout-theme.color($theme);
+}

@@ -1,0 +1,5 @@
+@use './components/molecules/message-box-sm/message-box-sm-theme';
+
+@mixin color($theme) {
+    @include message-box-sm-theme.color($theme);
+}

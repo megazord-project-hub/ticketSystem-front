@@ -7,7 +7,10 @@ import { MyProjectsOProjectCardComponent } from './components/organisms/my-proje
 import { MatRippleModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MyProjectsANewProjectButtonComponent } from './components/atoms/my-projects-a-new-project-button/my-projects-a-new-project-button.component';
+import { MyProjectsMNewProjectDialog } from './components/molecules/my-projects-m-new-project-dialog/my-projects-m-new-project-dialog.component';
+import { MatButton } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -15,13 +18,16 @@ import { MyProjectsANewProjectButtonComponent } from './components/atoms/my-proj
     MyProjectsMProjectManagerComponent,
     MyProjectsPLayoutComponent,
     MyProjectsOProjectCardComponent,
-    MyProjectsANewProjectButtonComponent
+    MyProjectsANewProjectButtonComponent,
+    MyProjectsMNewProjectDialog
   ],
   imports: [
     CommonModule,
     MatRippleModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
+    MatButton
   ]
 })
 export class MyProjectsModule { }

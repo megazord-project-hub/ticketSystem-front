@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, Renderer2 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { startAuthAttempt } from '../../../../../core/auth/store/state-management/auth.actions';
@@ -6,33 +6,36 @@ import { AppState } from '../../../../../core/store/interfaces/app-state';
 import { ErrorMessages } from './form-validation-messages/form-validation-messages';
 import { AuthRequestBodyModel } from 'src/app/core/auth/models/auth-request-body.model';
 import { selectIsLoading } from 'src/app/core/auth/store/state-management/auth.reducer';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login-o-form',
   templateUrl: './login-o-form.component.html',
-  styleUrls: ['./login-o-form.component.scss']
+  styleUrls: ['./login-o-form.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginOFormComponent implements OnInit {
-  myForm!: FormGroup; 
   passwordErrorMessage: string;
   loginErrorMessage: string;
   isPasswordVisible: boolean;
-  private store: Store;
-  private renderer: Renderer2;
-  isAuthenticationLoading: boolean;
 
-  constructor(renderer: Renderer2, store: Store<AppState>) {
+  myForm!: FormGroup; 
+  isAuthenticationLoading$!: Observable<boolean>;
+
+  constructor(private renderer: Renderer2, private store: Store<AppState>) {
     this.passwordErrorMessage = '';
     this.loginErrorMessage = '';
-    this.renderer = renderer;
     this.isPasswordVisible = false;
-    this.store = store;
-    this.isAuthenticationLoading = false;
   }
 
   ngOnInit(): void {
     this.configureForm();
-    this.store.select(selectIsLoading).subscribe((value) => this.isAuthenticationLoading = value);
+    this.isAuthenticationLoading$ = this.store.select(selectIsLoading);
+  }
+
+  impressaoTeste(): string {
+    console.log("impressao teste do form");
+    return "oi";
   }
 
   private configureForm(): void {
@@ -40,6 +43,10 @@ export class LoginOFormComponent implements OnInit {
       'login': new FormControl(null, [Validators.required]),
       'password': new FormControl(null, [Validators.required, Validators.minLength(3)])
     });
+  }
+
+  teste() {
+    console.log("teste form")
   }
 
   onSubmit(): void {

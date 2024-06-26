@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use './app/core/theming/theme-mixins' as app;
+@use './app/core/theming/theme-variables' as theme;
+
+@include mat.core();
+
+.mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) .mat-mdc-floating-label { display: inline; }
 
 html, body { height: 100%; }
 body { 
@@ -6,12 +13,23 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif; 
 }
 
-.g-padding-medium {
-    padding: 16px;
+// ouvi falar q quando precisar usar metodos nos ngifs ou no interpolation, usar piopes, pois eles
+// não são executados novamente no change detection run
+
+// https://www.youtube.com/watch?v=-tB-QDrPmuI&ab_channel=MonsterlessonsAcademy
+// ver sobre change detection
+
+// ver https://medium.com/google-design/using-material-density-on-the-web-59d85f1918f0
+// No Material Desin 3: Each increment represents a decrease in the height of a component by 4dp.
+// ou seja, acho q density no geral é só pra mudar altura, não mudar a largura.
+
+html {
+    @include mat.all-component-themes(theme.$light-theme);
+    @include app.all-component-themes(theme.$light-theme);
+
+    .dark {
+        @include mat.all-component-colors(theme.$dark-theme);
+        @include app.all-component-colors(theme.$dark-theme);
+    }
 }
 
-.g-thin-round-border {
-    border-radius: 4px;
-    border-width: 1px;
-    border-style: solid;
-}
