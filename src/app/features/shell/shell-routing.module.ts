@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ShellTLayoutComponent } from './components/templates/shell-t-layout/shell-t-layout.component';
-import { MyProjectsPLayoutComponent } from '../my-projects/components/pages/my-projects-p-layout/my-projects-p-layout.component';
+import { ShellTemplateFtComponent } from './components/templates/shell-template-ft/shell-template-ft.component';
+import { ProjectsPageFpComponent } from '../projects/components/pages/projects-page-fp/projects-page-fp.component';
 
 const routes: Routes = [
-  { path: '', component: ShellTLayoutComponent, children: [
+  { path: '', component: ShellTemplateFtComponent, children: [
     { path: '', redirectTo: 'projetos', pathMatch: 'full' },
-    { path: 'projetos', component: MyProjectsPLayoutComponent }
+    { path: 'projetos', component: ProjectsPageFpComponent }
   ]},
 ];
 

@@ -1,7 +1,7 @@
-@use './message-box-s/message-box-s-theme';
+@use './message-bar/message-bar-theme';
 
 @mixin all-shared-colors($theme) {
-    @include message-box-s-theme.color($theme);
+    @include message-bar-theme.color($theme);
 }
 
 @mixin all-shared-densities($theme) {

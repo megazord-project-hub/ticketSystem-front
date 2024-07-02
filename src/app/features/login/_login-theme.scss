@@ -1,7 +1,7 @@
-@use './components/organisms/login-o-box/login-o-box-theme';
-@use './components/pages/login-p-layout/login-p-layout-theme';
+@use './components/organisms/login-box-fo/login-box-fo-theme';
+@use './components/pages/login-fp/login-fp-theme';
 
 @mixin color($theme) {
-    @include login-o-box-theme.color($theme);
-    @include login-p-layout-theme.color($theme);
+    @include login-box-fo-theme.color($theme);
+    @include login-fp-theme.color($theme);
 }

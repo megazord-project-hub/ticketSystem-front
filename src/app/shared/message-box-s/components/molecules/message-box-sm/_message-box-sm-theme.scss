@@ -1,8 +1,0 @@
-@use '@angular/material' as mat;
-
-@mixin color($theme) {
-    .message-box {
-        background-color: mat.get-theme-color($theme, error-container);
-        color: mat.get-theme-color($theme, on-error-container)
-    }
-}

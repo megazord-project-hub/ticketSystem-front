@@ -1,0 +1,8 @@
+<div [ngClass]="classe" class="message-box g-padding-md g-border-radius-xs">
+    @if (showIcon) {
+        <mat-icon class="icone">warning</mat-icon>
+    }
+    <div>
+        <ng-content></ng-content>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+@use '@angular/material' as mat;
+
+@mixin color($theme) {
+    .info {
+        background-color: mat.get-theme-color($theme, error-container);
+        color: mat.get-theme-color($theme, on-error-container)
+    }
+
+    .warn {
+        background-color: mat.get-theme-color($theme, error-container);
+        color: mat.get-theme-color($theme, on-error-container)
+    }
+
+    .error {
+        background-color: mat.get-theme-color($theme, error-container);
+        color: mat.get-theme-color($theme, on-error-container)
+    }
+}

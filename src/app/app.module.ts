@@ -7,10 +7,10 @@ import { EffectsModule } from '@ngrx/effects';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CoreModule } from './core/core.module';
-import { CoreBootstrapComponent } from './core/components/core-bootstrap/core-bootstrap.component';
+import { BootstrapCtComponent } from './core/bootstrap/components/templates/bootstrap-ct/bootstrap-ct.component';
 
 @NgModule({ declarations: [],
-    bootstrap: [CoreBootstrapComponent], imports: [BrowserModule,
+    bootstrap: [BootstrapCtComponent], imports: [BrowserModule,
         BrowserAnimationsModule,
         // AppRoutingModule should always be the last module imported into
         // this array, relative to other modules that define routes. Otherwise,

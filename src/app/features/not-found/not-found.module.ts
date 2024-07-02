@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NotFoundMEmptyStateComponent } from './components/molecules/not-found-m-empty-state/not-found-m-empty-state.component';
-import { NotFoundPLayoutComponent } from './components/pages/not-found-p-layout/not-found-p-layout.component';
+import { NotFoundEmptyStateFmComponent } from './components/molecules/not-found-empty-state-fm/not-found-empty-state-fm.component';
+import { NotFoundPageFpComponent } from './components/pages/not-found-page-fp/not-found-page-fp.component';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', component: NotFoundPLayoutComponent, pathMatch: 'full'}
+  { path: '', component: NotFoundPageFpComponent, pathMatch: 'full'}
 ];
 
 @NgModule({
   declarations: [
-    NotFoundMEmptyStateComponent,
-    NotFoundPLayoutComponent
+    NotFoundEmptyStateFmComponent,
+    NotFoundPageFpComponent
   ],
   imports: [
     CommonModule,

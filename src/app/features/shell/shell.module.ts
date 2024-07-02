@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ShellMUserDescriptionComponent } from './components/molecules/shell-m-user-description/shell-m-user-description.component';
-import { ShellTLayoutComponent } from './components/templates/shell-t-layout/shell-t-layout.component';
+import { ShellUserFmComponent } from './components/molecules/shell-user-fm/shell-user-fm.component';
+import { ShellTemplateFtComponent } from './components/templates/shell-template-ft/shell-template-ft.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { PaginaPadraoRoutingModule } from './shell-routing.module';
-import { MyProjectsModule } from '../my-projects/my-projects.module';
+import { MyProjectsModule } from '../projects/projects.module';
 
 @NgModule({
   declarations: [
-    ShellMUserDescriptionComponent,
-    ShellTLayoutComponent
+    ShellUserFmComponent,
+    ShellTemplateFtComponent
   ],
   imports: [
     CommonModule,

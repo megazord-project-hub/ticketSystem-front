@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginOBoxComponent } from './components/organisms/login-o-box/login-o-box.component';
-import { LoginOFormComponent } from './components/organisms/login-o-form/login-o-form.component';
-import { LoginPLayoutComponent } from './components/pages/login-p-layout/login-p-layout.component';
+import { LoginBoxFoComponent } from './components/organisms/login-box-fo/login-box-fo.component';
+import { LoginFormFoComponent } from './components/organisms/login-form-fo/login-form-fo.component';
+import { LoginFpComponent } from './components/pages/login-fp/login-fp.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -11,14 +11,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { LoginRoutingModule } from './login-routing.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTooltipModule } from '@angular/material/tooltip'
-import { MessageBoxSModule } from 'src/app/shared/message-box-s/message-box-s.module';
+import { MessageBarModule } from 'src/app/shared/message-bar/message-bar.module';
 
 
 @NgModule({
   declarations: [
-    LoginOBoxComponent,
-    LoginOFormComponent,
-    LoginPLayoutComponent
+    LoginBoxFoComponent,
+    LoginFormFoComponent,
+    LoginFpComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +31,7 @@ import { MessageBoxSModule } from 'src/app/shared/message-box-s/message-box-s.mo
     LoginRoutingModule,
     MatProgressSpinnerModule,
     MatTooltipModule,
-    MessageBoxSModule
+    MessageBarModule
   ]
 })
 export class LoginModule { }

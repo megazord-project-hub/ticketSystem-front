@@ -1,0 +1,5 @@
+@use './components/templates/message-bar-st/message-bar-st-theme';
+
+@mixin color($theme) {
+    @include message-bar-st-theme.color($theme);
+}
