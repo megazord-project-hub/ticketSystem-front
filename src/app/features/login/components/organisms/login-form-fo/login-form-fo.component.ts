@@ -5,7 +5,7 @@ import { startAuthAttempt } from '../../../../../core/auth/store/state-managemen
 import { AppState } from '../../../../../core/store/interfaces/app-state';
 import { ErrorMessages } from './form-validation-messages/form-validation-messages';
 import { AuthRequestBodyModel } from 'src/app/core/auth/models/auth-request-body.model';
-import { selectIsLoading } from 'src/app/core/auth/store/state-management/auth.reducer';
+import { selectErrorClassName, selectIsLoading } from 'src/app/core/auth/store/state-management/auth.reducer';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -21,21 +21,21 @@ export class LoginFormFoComponent implements OnInit {
 
   myForm!: FormGroup; 
   isAuthenticationLoading$!: Observable<boolean>;
+  hasAuthFailed: boolean;
 
   constructor(private renderer: Renderer2, private store: Store<AppState>) {
     this.passwordErrorMessage = '';
     this.loginErrorMessage = '';
     this.isPasswordVisible = false;
+    this.hasAuthFailed = false;
   }
 
   ngOnInit(): void {
     this.configureForm();
-    this.isAuthenticationLoading$ = this.store.select(selectIsLoading);
-  }
-
-  impressaoTeste(): string {
-    console.log("impressao teste do form");
-    return "oi";
+    this.isAuthenticationLoading$ = this.store.select(selectIsLoading); 
+    this.store
+      .select(selectErrorClassName)
+      .subscribe(errorClassName => (errorClassName === null) ? this.hasAuthFailed = false : this.hasAuthFailed = true);
   }
 
   private configureForm(): void {
@@ -43,10 +43,6 @@ export class LoginFormFoComponent implements OnInit {
       'login': new FormControl(null, [Validators.required]),
       'password': new FormControl(null, [Validators.required, Validators.minLength(3)])
     });
-  }
-
-  teste() {
-    console.log("teste form")
   }
 
   onSubmit(): void {

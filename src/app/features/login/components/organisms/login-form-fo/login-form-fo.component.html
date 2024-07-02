@@ -1,7 +1,9 @@
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form_container">
-    <app-message-bar-st [showIcon]="true" messageType="error">Ocorreu um erro.asiodjaoi djasiodjasoi asdoij asoidjas asoi djioasdj aiodjasio d</app-message-bar-st>
-    <app-message-bar-st [showIcon]="true" messageType="warn">Ocorreu um erro.asiodjaoi djasiodjasoi asdoij asoidjas asoi djioasdj aiodjasio d</app-message-bar-st>
-    <app-message-bar-st [showIcon]="true" messageType="info">Ocorreu um erro.asiodjaoi djasiodjasoi asdoij asoidjas asoi djioasdj aiodjasio d</app-message-bar-st>
+    @if (hasAuthFailed) {
+        <app-message-bar-st [showIcon]="true" messageType="error">
+            Login ou senha incorretos.
+        </app-message-bar-st>
+    }
     <mat-form-field appearance="fill" subscriptSizing="dynamic">
         <mat-label>Login</mat-label>
         <input (blur)="updateLoginErrorMessage()" id="login" formControlName="login" matInput placeholder="Digite aqui o seu login.">
@@ -22,6 +24,4 @@
             <span><mat-spinner [diameter]="24"></mat-spinner></span>
         }
     </button>
-    
 </form>
-<button (click)="teste()">{{impressaoTeste()}}</button>

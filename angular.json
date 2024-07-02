@@ -32,8 +32,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/global-classes.scss",
-              "src/global-variables.scss"
+              "src/app/core/global-styles/global-classes.scss"
             ],
             "scripts": [],
             "browser": "src/main.ts"
@@ -96,8 +95,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/global-classes.scss",
-              "src/global-variables.scss"
+              "src/app/core/global-styles/global-classes.scss"
             ],
             "scripts": []
           }

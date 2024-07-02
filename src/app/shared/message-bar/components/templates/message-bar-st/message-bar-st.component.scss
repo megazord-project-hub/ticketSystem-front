@@ -1,9 +1,21 @@
+@use '../../../../../core/global-styles/global-color-variables' as colors;
+
+.info {
+    color: colors.$g-info-color;
+    border-color: colors.$g-info-color;
+}
+
+.warn {
+    color: colors.$g-warn-color;
+    border-color: colors.$g-warn-color;
+}
+
 .message-box {
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
-.icone {
+.icon {
     flex-shrink: 0;
 }

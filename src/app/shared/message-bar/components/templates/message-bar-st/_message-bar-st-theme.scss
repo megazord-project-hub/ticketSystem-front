@@ -1,16 +1,6 @@
 @use '@angular/material' as mat;
 
 @mixin color($theme) {
-    .info {
-        color: rgb(12, 104, 223);
-        border: 1px solid rgb(12, 104, 223);
-    }
-
-    .warn {
-        color: rgb(197, 149, 5);
-        border: 1px solid rgb(197, 149, 5);
-    }
-
     .error {
         background-color: mat.get-theme-color($theme, error-container);
         color: mat.get-theme-color($theme, on-error-container)

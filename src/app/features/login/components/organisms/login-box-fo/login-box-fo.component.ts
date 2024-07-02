@@ -31,8 +31,4 @@ export class LoginBoxFoComponent implements OnInit {
     };
     this.store.dispatch(changeTheme(newTheme));
   }
-
-  teste() {
-    
-  }
 }

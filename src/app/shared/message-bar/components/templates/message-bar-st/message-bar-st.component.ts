@@ -17,30 +17,30 @@ export class MessageBarStComponent {
   }
 
   iconName: MaterialSymbolsIconName;
-  cssClass: string;
+  cssClasses: string[];
 
   constructor() {
     this.showIcon = false;
     this.messageType = 'info';
     this.iconName = 'info';
-    this.cssClass = 'info';
+    this.cssClasses = ['info', 'g-border-thickness-xs'];
   }
 
-  private setPropertiesForMessageType(messageType: string) {
+  private setPropertiesForMessageType(messageType: string): void {
     switch (messageType) {
       case 'info': {
         this.iconName = 'info';
-        this.cssClass = 'info';
+        this.cssClasses = ['info', 'g-border-thickness-xs'];
         break;
       }
       case 'warn': {
         this.iconName = 'warning';
-        this.cssClass = 'warn';
+        this.cssClasses = ['warn', 'g-border-thickness-xs'];
         break;
       }
       case 'error': {
         this.iconName = 'warning';
-        this.cssClass = 'error';
+        this.cssClasses = ['error'];
         break;
       }
     }

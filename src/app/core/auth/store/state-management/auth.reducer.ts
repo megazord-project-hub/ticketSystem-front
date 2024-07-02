@@ -34,7 +34,7 @@ export const authFeature = createFeature({
         on(authFailure, (state, action) => ({
             ...state,
             isLoading: false,
-            error: action.errorClassName
+            errorClassName: action.errorClassName
         }))
     )
 });
