@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 type MessageType = 'info' | 'warn' | 'error';
-type IconName = 'info' | 'warning';
+type MaterialSymbolsIconName = 'info' | 'warning';
 
 @Component({
   selector: 'app-message-bar-st',
@@ -11,21 +11,38 @@ type IconName = 'info' | 'warning';
 })
 export class MessageBarStComponent {
   @Input() showIcon: boolean;
+
   @Input() set messageType(type: MessageType) {
-    if (this.messageType === 'info') {
-      this.iconName = 'info'
-    } else {
-      this.iconName = 'warning';
-    }
+    this.setPropertiesForMessageType(type);
   }
 
-  iconName: IconName;
-
-  classe: string = 'info';
+  iconName: MaterialSymbolsIconName;
+  cssClass: string;
 
   constructor() {
     this.showIcon = false;
     this.messageType = 'info';
     this.iconName = 'info';
+    this.cssClass = 'info';
+  }
+
+  private setPropertiesForMessageType(messageType: string) {
+    switch (messageType) {
+      case 'info': {
+        this.iconName = 'info';
+        this.cssClass = 'info';
+        break;
+      }
+      case 'warn': {
+        this.iconName = 'warning';
+        this.cssClass = 'warn';
+        break;
+      }
+      case 'error': {
+        this.iconName = 'warning';
+        this.cssClass = 'error';
+        break;
+      }
+    }
   }
 }

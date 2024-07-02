@@ -2,13 +2,13 @@
 
 @mixin color($theme) {
     .info {
-        background-color: mat.get-theme-color($theme, error-container);
-        color: mat.get-theme-color($theme, on-error-container)
+        color: rgb(12, 104, 223);
+        border: 1px solid rgb(12, 104, 223);
     }
 
     .warn {
-        background-color: mat.get-theme-color($theme, error-container);
-        color: mat.get-theme-color($theme, on-error-container)
+        color: rgb(197, 149, 5);
+        border: 1px solid rgb(197, 149, 5);
     }
 
     .error {
