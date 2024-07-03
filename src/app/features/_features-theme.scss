@@ -1,9 +1,0 @@
-@use './login/login-theme';
-
-@mixin all-feature-colors($theme) {
-    @include login-theme.color($theme);
-}
-
-@mixin all-feature-densities($theme) {
-
-}

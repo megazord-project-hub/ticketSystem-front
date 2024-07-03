@@ -27,7 +27,7 @@ html {
     @include mat.all-component-themes(theme.$light-theme);
     @include app.all-component-themes(theme.$light-theme);
 
-    .dark {
+    .g-dark-theme {
         @include mat.all-component-colors(theme.$dark-theme);
         @include app.all-component-colors(theme.$dark-theme);
     }

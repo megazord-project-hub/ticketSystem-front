@@ -1,13 +1,10 @@
-@use '../../features/features-theme' as features;
 @use '../../shared/shared-theme' as shared;
 
 @mixin all-component-colors($theme) {
-    @include features.all-feature-colors($theme);
     @include shared.all-shared-colors($theme);
 }
 
 @mixin all-component-densities($theme) {
-    @include features.all-feature-densities($theme);
     @include shared.all-shared-densities($theme);
 }
 

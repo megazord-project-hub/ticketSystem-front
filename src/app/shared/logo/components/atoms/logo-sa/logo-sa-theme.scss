@@ -1,0 +1,14 @@
+@use '@angular/material' as mat;
+@use '../../../../../core/theming/theme-variables' as themes;
+
+@mixin styles($theme) {
+    .logo path {
+        fill: mat.get-theme-color($theme, primary);
+    }
+}
+
+@include styles(themes.$light-theme);
+
+:host-context(.g-dark-theme) {
+    @include styles(themes.$dark-theme);
+}

@@ -10,7 +10,7 @@ import { selectThemeState } from 'src/app/core/theming/store/state-management/th
 @Component({
   selector: 'app-login-box-fo',
   templateUrl: './login-box-fo.component.html',
-  styleUrls: ['./login-box-fo.component.scss', './_login-box-fo-theme.scss'],
+  styleUrls: ['./login-box-fo.component.scss', './login-box-fo-theme.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginBoxFoComponent implements OnInit, OnDestroy {

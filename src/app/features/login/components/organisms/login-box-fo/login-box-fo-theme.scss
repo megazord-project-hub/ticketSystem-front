@@ -17,6 +17,6 @@
 
 @include styles(themes.$light-theme);
 
-:host-context(.dark) {
+:host-context(.g-dark-theme) {
     @include styles(themes.$dark-theme);
 }
