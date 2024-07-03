@@ -12,6 +12,7 @@ import { LoginRoutingModule } from './login-routing.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTooltipModule } from '@angular/material/tooltip'
 import { MessageBarModule } from 'src/app/shared/message-bar/message-bar.module';
+import { LogoModule } from 'src/app/shared/logo/logo.module';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { MessageBarModule } from 'src/app/shared/message-bar/message-bar.module'
     LoginRoutingModule,
     MatProgressSpinnerModule,
     MatTooltipModule,
-    MessageBarModule
+    MessageBarModule,
+    LogoModule
   ]
 })
 export class LoginModule { }

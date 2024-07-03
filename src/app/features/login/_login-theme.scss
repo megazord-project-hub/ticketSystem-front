@@ -2,6 +2,6 @@
 @use './components/pages/login-fp/login-fp-theme';
 
 @mixin color($theme) {
-    @include login-box-fo-theme.color($theme);
+    
     @include login-fp-theme.color($theme);
 }

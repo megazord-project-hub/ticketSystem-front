@@ -1,3 +1,6 @@
+@use '@angular/material' as mat;
+@use '../../../../../core/theming/theme-variables' as themes;
+
 .container {
     display: flex;
     flex-direction: column;
@@ -5,7 +8,7 @@
     gap: 16px;
 }
 
-.container_form {
+.container-form {
     width: 320px;
     border-radius: 24px;
     padding: 28px;
@@ -14,3 +17,27 @@
 .logo path {
     opacity: 0.9;
 }
+
+// .container-form {
+//     background-color: mat.get-theme-color(themes.$light-theme, surface-container);
+
+//     :host-context(.dark) {
+//         background-color: mat.get-theme-color(themes.$dark-theme, surface-container);
+//     }
+// }
+
+// .logo path {
+//     fill: mat.get-theme-color(themes.$light-theme, primary);
+
+//     :host-context(.dark) {
+//         fill: mat.get-theme-color(themes.$dark-theme, primary);
+//     }
+// }
+
+// .theme-type-button {
+//     color: mat.get-theme-color(themes.$light-theme, outline);
+
+//     :host-context(.dark) {
+//         color: mat.get-theme-color(themes.$dark-theme, outline);
+//     }
+// }

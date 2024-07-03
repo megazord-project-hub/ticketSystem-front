@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit, Renderer2 } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { startAuthAttempt } from '../../../../../core/auth/store/state-management/auth.actions';
@@ -6,7 +6,7 @@ import { AppState } from '../../../../../core/store/interfaces/app-state';
 import { ErrorMessages } from './form-validation-messages/form-validation-messages';
 import { AuthRequestBodyModel } from 'src/app/core/auth/models/auth-request-body.model';
 import { selectErrorClassName, selectIsLoading } from 'src/app/core/auth/store/state-management/auth.reducer';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-login-form-fo',
@@ -14,14 +14,14 @@ import { Observable } from 'rxjs';
   styleUrls: ['./login-form-fo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LoginFormFoComponent implements OnInit {
+export class LoginFormFoComponent implements OnInit, OnDestroy {
   passwordErrorMessage: string;
   loginErrorMessage: string;
   isPasswordVisible: boolean;
-
+  hasAuthFailed: boolean;
+  hasAuthFailedSubscription$!: Subscription;
   myForm!: FormGroup; 
   isAuthenticationLoading$!: Observable<boolean>;
-  hasAuthFailed: boolean;
 
   constructor(private renderer: Renderer2, private store: Store<AppState>) {
     this.passwordErrorMessage = '';
@@ -33,9 +33,10 @@ export class LoginFormFoComponent implements OnInit {
   ngOnInit(): void {
     this.configureForm();
     this.isAuthenticationLoading$ = this.store.select(selectIsLoading); 
-    this.store
-      .select(selectErrorClassName)
-      .subscribe(errorClassName => (errorClassName === null) ? this.hasAuthFailed = false : this.hasAuthFailed = true);
+    this.hasAuthFailedSubscription$ = 
+      this.store
+        .select(selectErrorClassName)
+        .subscribe(errorClassName => (errorClassName === null) ? this.hasAuthFailed = false : this.hasAuthFailed = true);
   }
 
   private configureForm(): void {
@@ -98,5 +99,9 @@ export class LoginFormFoComponent implements OnInit {
     } else if (passwordControl.errors['minlength']) {
       this.passwordErrorMessage = ErrorMessages.password.minLength;
     }
+  }
+
+  ngOnDestroy(): void {
+      this.hasAuthFailedSubscription$.unsubscribe();
   }
 }

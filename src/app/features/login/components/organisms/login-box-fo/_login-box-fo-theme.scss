@@ -1,7 +1,8 @@
 @use '@angular/material' as mat;
+@use '../../../../../core/theming/theme-variables' as themes;
 
-@mixin color($theme) {
-    .container_form {
+@mixin styles($theme) {
+    .container-form {
         background-color: mat.get-theme-color($theme, surface-container);
     }
 
@@ -12,4 +13,10 @@
     .theme-type-button {
         color: mat.get-theme-color($theme, outline);
     }
+}
+
+@include styles(themes.$light-theme);
+
+:host-context(.dark) {
+    @include styles(themes.$dark-theme);
 }

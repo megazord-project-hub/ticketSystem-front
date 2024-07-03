@@ -1,0 +1,8 @@
+@use '@angular/material' as mat;
+
+@mixin color($theme) {
+    .error {
+        background-color: mat.get-theme-color($theme, error-container);
+        color: mat.get-theme-color($theme, on-error-container)
+    }
+}
